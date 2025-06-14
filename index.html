@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知っトク相性チェック！チーム診断</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- スタイルシート -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+</head>
+<body>
+    <div class="container">
+        <!-- スタート画面 -->
+        <div id="start-screen" class="screen active">
+            <h1>知っトク相性チェック！</h1>
+            <h2>チーム診断</h2>
+            <p>あなたのビジネスタイプを診断します</p>
+            <button id="start-btn" class="btn primary-btn">
+                診断スタート <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+
+        <!-- 質問画面 -->
+        <div id="question-screen" class="screen">
+            <div class="progress-bar">
+                <div class="progress-inner" style="width: 0%"></div>
+                <div class="progress-text">1/6</div>
+            </div>
+            <div id="question-container" class="swipeable">
+                <div class="question-text">
+                    <h2 id="question-title">質問 1</h2>
+                    <p id="question-content">ここに質問が表示されます</p>
+                </div>
+                <div class="options">
+                    <div class="option option-a">
+                        <span id="option-a-text">選択肢 A</span>
+                    </div>
+                    <div class="option option-b">
+                        <span id="option-b-text">選択肢 B</span>
+                    </div>
+                </div>
+                <div class="swipe-hint">
+                    <span class="left"><i class="fas fa-hand-point-right"></i> 左右にスワイプ</span>
+                </div>
+                <div class="tap-options">
+                    <button id="select-a-btn" class="btn option-btn">
+                        選択肢A
+                    </button>
+                    <button id="select-b-btn" class="btn option-btn">
+                        選択肢B
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 結果画面 -->
+        <div id="result-screen" class="screen">
+            <h1>あなたのタイプは</h1>
+            <div class="result-type">
+                <span id="result-type-name">タイプ名</span>
+                <div id="result-color" class="result-color-sample"></div>
+            </div>
+            <div class="result-instruction">
+                <p>スタッフにこの画面を見せてシールをもらいましょう</p>
+                <p>同じ色のチームは<span id="gathering-spot">場所</span>に集合してください</p>
+            </div>
+            <button id="restart-btn" class="btn secondary-btn">
+                もう一度診断する
+            </button>
+        </div>
+    </div>
+
+    <!-- Hammer.js for swipe -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <!-- ポリフィル -->
+    <script src="https://polyfill.io/v3/polyfill.min.js"></script>
+    <!-- スクリプト -->
+    <script src="scripts/typeDefinitions.js"></script>
+    <script src="scripts/questions.js"></script>
+    <script src="scripts/swipe.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
