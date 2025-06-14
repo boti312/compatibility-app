@@ -11,9 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
   // イベントリスナー設定
   setupEventListeners();
   
-  // スワイプとタップの初期化
+  // スワイプ機能の初期化
   initSwipe();
-  initClickSelection();
 });
 
 /**
@@ -26,10 +25,6 @@ function setupFirstQuestion() {
     document.getElementById('question-content').textContent = questionData.question;
     document.getElementById('option-a-text').textContent = questionData.optionA;
     document.getElementById('option-b-text').textContent = questionData.optionB;
-    
-    // ボタンのテキストも更新
-    document.getElementById('select-a-btn').textContent = questionData.optionA;
-    document.getElementById('select-b-btn').textContent = questionData.optionB;
   }
 }
 

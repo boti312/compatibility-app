@@ -31,28 +31,30 @@
                 <div class="progress-text">1/6</div>
             </div>
             <div id="question-container" class="swipeable">
+                <!-- スワイプ方向オーバーレイ -->
+                <div class="swipe-overlay swipe-left-overlay" id="swipe-left-overlay">
+                    <i class="fas fa-thumbs-up"></i>選択 A
+                </div>
+                <div class="swipe-overlay swipe-right-overlay" id="swipe-right-overlay">
+                    <i class="fas fa-thumbs-up"></i>選択 B
+                </div>
+                
                 <div class="question-text">
                     <h2 id="question-title">質問 1</h2>
                     <p id="question-content">ここに質問が表示されます</p>
                 </div>
                 <div class="options">
                     <div class="option option-a">
+                        <i class="fas fa-arrow-left swipe-icon"></i>
                         <span id="option-a-text">選択肢 A</span>
                     </div>
                     <div class="option option-b">
                         <span id="option-b-text">選択肢 B</span>
+                        <i class="fas fa-arrow-right swipe-icon"></i>
                     </div>
                 </div>
                 <div class="swipe-hint">
-                    <span class="left"><i class="fas fa-hand-point-right"></i> 左右にスワイプ</span>
-                </div>
-                <div class="tap-options">
-                    <button id="select-a-btn" class="btn option-btn">
-                        選択肢A
-                    </button>
-                    <button id="select-b-btn" class="btn option-btn">
-                        選択肢B
-                    </button>
+                    <span><i class="fas fa-hand-point-right"></i> 左右にスワイプして選択</span>
                 </div>
             </div>
         </div>
@@ -84,4 +86,4 @@
     <script src="scripts/swipe.js"></script>
     <script src="scripts/app.js"></script>
 </body>
-</html>
+</html> 
