@@ -11,6 +11,7 @@
   --color-option-b: #F44336; /* 選択肢B（右スワイプ）*/
   --font-family: 'M PLUS Rounded 1c', sans-serif;
   --border-radius: 12px;
+  --card-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 * {
@@ -375,4 +376,189 @@ html, body {
 
 .option-b.option-selected {
   background-color: rgba(244, 67, 54, 0.1);
+}
+
+/* カード UI */
+.card-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 20px;
+  height: 450px;
+}
+
+.card {
+  width: 100%;
+  max-width: 90%;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  position: relative;
+  z-index: 10;
+  transition: all 0.3s ease;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 430px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: var(--color-accent);
+}
+
+.question-text {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  flex-grow: 1;
+}
+
+.card-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card-option {
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.card-option span {
+  flex: 1;
+  line-height: 1.4;
+}
+
+.card-option:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* 左選択肢（選択肢A）*/
+.option-a {
+  border-left: 8px solid var(--color-option-a);
+  flex-direction: row;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+/* 右選択肢（選択肢B）*/
+.option-b {
+  border-left: 8px solid var(--color-option-b);
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+}
+
+.option-b span {
+  text-align: left; /* 選択肢Bのテキストは常に左寄せに */
+}
+
+.card-option .swipe-icon {
+  font-size: 1.2rem;
+  opacity: 0.7;
+  min-width: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.option-a .swipe-icon {
+  color: var(--color-option-a);
+  margin-right: 15px;
+}
+
+.option-b .swipe-icon {
+  color: var(--color-option-b);
+  margin-left: 15px;
+}
+
+/* 左右選択エリア */
+.selection-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70px;
+  z-index: 5;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.selection-left {
+  margin-right: -20px;
+}
+
+.selection-right {
+  margin-left: -20px;
+}
+
+.selection-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  font-size: 1.5rem;
+}
+
+.selection-left .selection-icon {
+  background-color: var(--color-option-a);
+  color: white;
+}
+
+.selection-right .selection-icon {
+  background-color: var(--color-option-b);
+  color: white;
+}
+
+.selection-label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* カードスワイプエフェクト */
+.card-swipe-left {
+  transform: translateX(-150px) rotate(-20deg);
+  opacity: 0;
+}
+
+.card-swipe-right {
+  transform: translateX(150px) rotate(20deg);
+  opacity: 0;
+}
+
+/* カードがスワイプされているとき */
+.card-dragging-left {
+  transform: rotate(-5deg) translateX(-20px);
+}
+
+.card-dragging-right {
+  transform: rotate(5deg) translateX(20px);
+}
+
+/* スワイプ中のセレクションエリア強調 */
+.selection-active {
+  opacity: 1;
+  transform: scale(1.1);
 } 
