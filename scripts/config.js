@@ -43,7 +43,7 @@ const BUSINESS_TYPES = {
     color: '#1E88E5', // 青色
     description: '目標達成に向けて組織をまとめ、周囲を巻き込むのが得意です。',
     strengths: ['目標設定', '交渉力', 'プロジェクト管理'],
-    gatheringSpot: '左後方'
+    gatheringSpot: '右後方'
   },
   SUPPORTER: {
     id: 'supporter',
@@ -51,7 +51,7 @@ const BUSINESS_TYPES = {
     color: '#43A047', // 緑色
     description: '協調性があり、チームの調和を大切にします。人間関係構築に優れています。',
     strengths: ['コミュニケーション', '共感力', 'チームワーク'],
-    gatheringSpot: '右前方'
+    gatheringSpot: '左後方'
   },
   INNOVATOR: {
     id: 'innovator',
@@ -59,7 +59,7 @@ const BUSINESS_TYPES = {
     color: '#FFB300', // オレンジ色
     description: '創造的で新しいアイデアを生み出すのが得意です。変化を恐れない柔軟性があります。',
     strengths: ['創造性', '柔軟性', '発想力'],
-    gatheringSpot: '右後方'
+    gatheringSpot: '右前方'
   }
 };
 
