@@ -9,17 +9,17 @@ const APP_CONFIG = {
   title: "知っトク相性チェック！",
   subtitle: "チーム診断",
   startButtonText: "診断スタート",
-
+  
   // 説明文
   description: "あなたのビジネスタイプを診断します",
-
+  
   // スワイプヒントの文言
   swipeHint: "カードを左右にスワイプして選択",
-
+  
   // 選択肢のラベル
   choiceALabel: "選択 A",
   choiceBLabel: "選択 B",
-
+  
   // 結果画面の設定
   resultTitle: "あなたのタイプは",
   resultInstruction: "＝＝＝",
@@ -60,22 +60,6 @@ const BUSINESS_TYPES = {
     description: '創造的で新しいアイデアを生み出すのが得意です。変化を恐れない柔軟性があります。',
     strengths: ['創造性', '柔軟性', '発想力'],
     gatheringSpot: '右後方'
-  },
-  COORDINATOR: {
-    id: 'coordinator',
-    name: 'コーディネーター型',
-    color: '#9C27B0', // 紫色
-    description: 'プロジェクト全体を調整し、チーム間の連携をスムーズにするのが得意です。',
-    strengths: ['調整力', 'コミュニケーション', '計画立案'],
-    gatheringSpot: '中央'
-  },
-  STRATEGIST: {
-    id: 'strategist',
-    name: 'ストラテジスト型',
-    color: '#009688', // ティール色
-    description: '長期的な視点で戦略を立て、最適な方向性を示します。',
-    strengths: ['戦略思考', '分析力', '計画力'],
-    gatheringSpot: 'ステージ前方'
   }
 };
 
@@ -116,37 +100,21 @@ const QUESTIONS = [
     question: '仕事の成果として、どちらをより重視しますか？',
     optionA: '正確さと完成度',
     optionB: '人間関係の構築と維持'
-  },
-  {
-    id: 7,
-    question: 'チームのモチベーションを保つために重視するのは？',
-    optionA: '目標に向けた具体的な計画',
-    optionB: 'メンバー同士の調整とサポート'
-  },
-  {
-    id: 8,
-    question: 'プロジェクトの方向性を決めるとき、どちらを優先しますか？',
-    optionA: '長期的な戦略',
-    optionB: '柔軟な対応力'
   }
 ];
 
 // スコア計算用のポイント配分
 const TYPE_SCORE_MAP = {
-  A1: { analyst: 2, leader: 0, supporter: 0, innovator: 1, coordinator: 0, strategist: 0 },
-  B1: { analyst: 0, leader: 1, supporter: 2, innovator: 0, coordinator: 0, strategist: 0 },
-  A2: { analyst: 1, leader: 2, supporter: 0, innovator: 0, coordinator: 0, strategist: 0 },
-  B2: { analyst: 0, leader: 0, supporter: 1, innovator: 2, coordinator: 0, strategist: 0 },
-  A3: { analyst: 1, leader: 0, supporter: 2, innovator: 0, coordinator: 0, strategist: 0 },
-  B3: { analyst: 0, leader: 2, supporter: 0, innovator: 1, coordinator: 0, strategist: 0 },
-  A4: { analyst: 0, leader: 0, supporter: 1, innovator: 2, coordinator: 0, strategist: 0 },
-  B4: { analyst: 2, leader: 1, supporter: 0, innovator: 0, coordinator: 0, strategist: 0 },
-  A5: { analyst: 0, leader: 2, supporter: 1, innovator: 0, coordinator: 0, strategist: 0 },
-  B5: { analyst: 1, leader: 0, supporter: 0, innovator: 2, coordinator: 0, strategist: 0 },
-  A6: { analyst: 2, leader: 1, supporter: 0, innovator: 0, coordinator: 0, strategist: 0 },
-  B6: { analyst: 0, leader: 0, supporter: 2, innovator: 1, coordinator: 0, strategist: 0 },
-  A7: { analyst: 1, leader: 0, supporter: 0, innovator: 0, coordinator: 0, strategist: 2 },
-  B7: { analyst: 0, leader: 1, supporter: 1, innovator: 0, coordinator: 2, strategist: 0 },
-  A8: { analyst: 1, leader: 1, supporter: 0, innovator: 0, coordinator: 0, strategist: 2 },
-  B8: { analyst: 0, leader: 0, supporter: 1, innovator: 2, coordinator: 1, strategist: 0 }
-};
+  A1: { analyst: 2, leader: 0, supporter: 0, innovator: 1 },
+  B1: { analyst: 0, leader: 1, supporter: 2, innovator: 0 },
+  A2: { analyst: 1, leader: 2, supporter: 0, innovator: 0 },
+  B2: { analyst: 0, leader: 0, supporter: 1, innovator: 2 },
+  A3: { analyst: 1, leader: 0, supporter: 2, innovator: 0 },
+  B3: { analyst: 0, leader: 2, supporter: 0, innovator: 1 },
+  A4: { analyst: 0, leader: 0, supporter: 1, innovator: 2 },
+  B4: { analyst: 2, leader: 1, supporter: 0, innovator: 0 },
+  A5: { analyst: 0, leader: 2, supporter: 1, innovator: 0 },
+  B5: { analyst: 1, leader: 0, supporter: 0, innovator: 2 },
+  A6: { analyst: 2, leader: 1, supporter: 0, innovator: 0 },
+  B6: { analyst: 0, leader: 0, supporter: 2, innovator: 1 }
+}; 
