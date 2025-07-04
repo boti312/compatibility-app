@@ -175,7 +175,8 @@ function initOptionTaps() {
  */
 function handleAnswer(answer) {
   answers[currentQuestion] = answer;
-  updateProgress();
+  // 現在の質問まで回答済みとして進捗を更新
+  updateProgress(currentQuestion);
 }
 
 /**
@@ -198,18 +199,19 @@ function showNextQuestion() {
     document.getElementById('option-a-text').textContent = questionData.optionA;
     document.getElementById('option-b-text').textContent = questionData.optionB;
     
-    updateProgress();
+    // 次の質問表示時点では前の質問までが完了した状態
+    updateProgress(currentQuestion - 1);
   }
 }
 
 /**
  * プログレスバーを更新
  */
-function updateProgress() {
+function updateProgress(answeredCount = currentQuestion) {
   const progressBar = document.querySelector('.progress-inner');
   const progressText = document.querySelector('.progress-text');
-  const progressPercentage = (currentQuestion) / QUESTIONS.length * 100;
-  
+  const progressPercentage = (answeredCount) / QUESTIONS.length * 100;
+
   progressBar.style.width = `${progressPercentage}%`;
   progressText.textContent = `${currentQuestion}/${QUESTIONS.length}`;
-} 
+}

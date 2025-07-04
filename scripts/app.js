@@ -81,7 +81,8 @@ function setupEventListeners() {
     
     // 最初の質問に戻す
     setupFirstQuestion();
-    updateProgress();
+    // 進捗をリセット
+    updateProgress(0);
     
     // 開始画面に戻る
     hideScreen('result-screen');
