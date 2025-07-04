@@ -6,8 +6,8 @@
 // アプリ全体の設定
 const APP_CONFIG = {
   // タイトル設定
-  title: "知っトク相性チェック！",
-  subtitle: "チーム診断",
+  title: "ビジネスタイプ診断",
+  subtitle: "2025年2Qキックオフ",
   startButtonText: "診断スタート",
   
   // 説明文
@@ -22,7 +22,7 @@ const APP_CONFIG = {
   
   // 結果画面の設定
   resultTitle: "あなたのタイプは",
-  resultInstruction: "＝＝＝",
+  resultInstruction: "ジョークアプリなので、診断結果は参考まで",
   resultGatheringTemplate: "同じ色のチームは{spot}に集合してください", // {spot}が集合場所に置き換えられます
   restartButtonText: "もう一度診断する"
 };
