@@ -124,6 +124,8 @@ function calculateResultType(answers) {
     leader: 0,
     supporter: 0,
     innovator: 0
+    coordinator: 0,
+    strategist: 0
   };
   
   // 各回答に応じてスコアを加算
