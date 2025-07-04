@@ -22,7 +22,7 @@ const APP_CONFIG = {
   
   // 結果画面の設定
   resultTitle: "あなたのタイプは",
-  resultInstruction: "スタッフにこの画面を見せてシールをもらいましょう",
+  resultInstruction: "＝＝＝",
   resultGatheringTemplate: "同じ色のチームは{spot}に集合してください", // {spot}が集合場所に置き換えられます
   restartButtonText: "もう一度診断する"
 };
@@ -35,7 +35,7 @@ const BUSINESS_TYPES = {
     color: '#E53935', // 赤色
     description: '論理的で分析力が高く、データに基づいた意思決定を好みます。',
     strengths: ['データ分析', '論理的思考', '問題解決能力'],
-    gatheringSpot: '会議室A'
+    gatheringSpot: '左前方'
   },
   LEADER: {
     id: 'leader',
@@ -43,7 +43,7 @@ const BUSINESS_TYPES = {
     color: '#1E88E5', // 青色
     description: '目標達成に向けて組織をまとめ、周囲を巻き込むのが得意です。',
     strengths: ['目標設定', '交渉力', 'プロジェクト管理'],
-    gatheringSpot: '会議室B'
+    gatheringSpot: '左後方'
   },
   SUPPORTER: {
     id: 'supporter',
@@ -51,7 +51,7 @@ const BUSINESS_TYPES = {
     color: '#43A047', // 緑色
     description: '協調性があり、チームの調和を大切にします。人間関係構築に優れています。',
     strengths: ['コミュニケーション', '共感力', 'チームワーク'],
-    gatheringSpot: '休憩スペース'
+    gatheringSpot: '右前方'
   },
   INNOVATOR: {
     id: 'innovator',
@@ -59,7 +59,7 @@ const BUSINESS_TYPES = {
     color: '#FFB300', // オレンジ色
     description: '創造的で新しいアイデアを生み出すのが得意です。変化を恐れない柔軟性があります。',
     strengths: ['創造性', '柔軟性', '発想力'],
-    gatheringSpot: 'オープンスペース'
+    gatheringSpot: '右後方'
   }
 };
 
